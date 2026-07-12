@@ -1,0 +1,1325 @@
+body{
+    margin:0;
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    height:100vh;
+
+    flex-direction:column;
+
+    font-family:'Fredoka',sans-serif;
+
+    background:linear-gradient(
+        135deg,
+        #ff7eb3,
+        #ff758c,
+        #ff4d94
+    );
+}
+
+h1{
+
+    font-size:70px;
+
+    color:white;
+
+    margin:0;
+
+    text-shadow:
+        0 0 20px #ffb6d9,
+        0 0 40px hotpink;
+    
+    animation:muncul 1s ease;
+
+}
+
+p{
+
+    font-size:25px;
+
+    color:white;
+
+    max-width:700px;
+
+    animation:muncul 1s ease;
+
+}
+
+.startButton{
+
+    margin-top:35px;
+
+    padding:18px 50px;
+
+    font-size:22px;
+
+    font-family:'Orbitron', sans-serif;
+
+    color:white;
+
+    background:linear-gradient(
+        90deg,
+        #ff4fa0,
+        #ff87d0
+    );
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 0 20px rgba(255,20,147,.4);
+
+    transition:.25s ease;
+
+}
+
+.startButton:hover{
+
+    transform:translateY(-4px) scale(1.03);
+
+    box-shadow:
+        0 0 35px hotpink;
+
+}
+
+.startButton:active{
+
+    transform:scale(.95);
+
+}
+
+.startButton{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.heart{
+
+    position:fixed;
+
+    top:-50px;
+
+    font-size:28px;
+
+    pointer-events:none;
+
+    animation:jatuh linear forwards;
+
+}
+
+@keyframes jatuh{
+
+    from{
+
+        transform:translateY(0) rotate(0deg);
+
+    }
+
+    to{
+
+        transform:translateY(110vh) rotate(360deg);
+
+    }
+
+}
+@keyframes muncul{
+
+    from{
+
+        opacity:0;
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ============================= */
+/* LOVE QUEST OVERLAY */
+/* ============================= */
+
+#overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    background: rgba(0,0,0,.45);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.2s ease;
+
+    z-index:999;
+
+}
+
+#overlay.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.panel{
+    width:650px;
+    max-width:90%;
+    max-height:85vh;   /* supaya gak lebih tinggi dari layar */
+
+    overflow-y:auto;   /* ini yang bikin bisa discroll */
+
+    padding:45px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(16px);
+
+    border:2px solid rgba(255,255,255,.25);
+
+    text-align:center;
+
+    box-shadow:
+        0 0 35px hotpink,
+        inset 0 0 25px rgba(255,255,255,.08);
+
+    animation:panelMasuk .35s ease;
+}
+
+.panel-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.gameTitle{
+
+    font-family:'Orbitron',sans-serif;
+
+    color:#ff77c8;
+
+    font-size:25px;
+
+    letter-spacing:2px;
+
+    text-shadow:
+    0 0 10px hotpink,
+    0 0 20px deeppink;
+
+}
+
+.level{
+
+    font-family:'Orbitron',sans-serif;
+
+    color:white;
+
+    background:rgba(255,255,255,.12);
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    border:1px solid rgba(255,255,255,.2);
+
+}
+
+#overlay.show .panel{
+
+    transform:scale(1);
+
+}
+
+.panel-header{
+
+    font-size:28px;
+
+    color:white;
+
+    margin-bottom:30px;
+
+    text-shadow:
+    0 0 10px hotpink,
+    0 0 25px deeppink;
+
+}
+
+#story{
+
+    min-height:170px;
+
+    color:white;
+
+    font-size:22px;
+
+    line-height:2;
+
+}
+
+.progress{
+
+    width:100%;
+
+    height:8px;
+
+    background:rgba(255,255,255,.15);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin-bottom:30px;
+
+}
+
+.progressFill{
+
+    width:20%;
+
+    height:100%;
+
+    background:linear-gradient(
+    90deg,
+    hotpink,
+    deeppink);
+
+    box-shadow:
+    0 0 20px hotpink;
+
+}
+
+.startButton::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:rgba(255,255,255,.35);
+
+    transform:skewX(-25deg);
+
+    transition:.6s;
+
+}
+
+.startButton:hover::before{
+
+    left:140%;
+
+}
+
+.boxes{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:35px;
+
+    margin-top:40px;
+
+}
+
+.box{
+
+    font-size:80px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.box:hover{
+
+    transform:scale(1.2) rotate(-8deg);
+
+    filter:drop-shadow(0 0 20px hotpink);
+
+}
+
+/* ===========================
+   NEXT BUTTON V2
+=========================== */
+
+#nextButton{
+
+    margin-top:40px;
+
+    padding:16px 45px;
+
+    border:none;
+
+    border-radius:50px;
+
+    font-size:22px;
+
+    font-family:'Fredoka',sans-serif;
+
+    color:white;
+
+    background:linear-gradient(
+        90deg,
+        #ff4da6,
+        #ff7bc3
+    );
+
+    cursor:pointer;
+
+    box-shadow:
+        0 0 20px hotpink;
+
+    transition:.25s;
+
+}
+
+#nextButton:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:
+        0 0 35px hotpink,
+        0 0 60px deeppink;
+
+}
+
+#story p{
+
+    animation:fadeUp .5s;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.boxes{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    margin-top:35px;
+
+}
+
+.box{
+
+    font-size:80px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    animation:melayang 2s ease-in-out infinite;
+
+}
+
+.box:hover{
+
+    transform:scale(1.15);
+
+    filter:drop-shadow(0 0 20px hotpink);
+
+}
+
+@keyframes melayang{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+.gameTitle{
+
+font-family:'Press Start 2P',cursive;
+
+}
+
+.level{
+
+font-family:'Press Start 2P',cursive;
+
+}
+
+/* ================= PANEL QUEST ================= */
+
+#overlay{
+
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(0,0,0,.45);
+
+    opacity:0;
+    pointer-events:none;
+
+    transition:.35s;
+
+}
+
+#overlay.show{
+
+    opacity:1;
+    pointer-events:auto;
+
+}
+
+.panel{
+    width:760px;
+    height:520px;
+
+    max-width:90vw;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(18px);
+
+    border:2px solid rgba(255,255,255,.2);
+
+    box-shadow:
+    0 0 35px hotpink,
+    inset 0 0 20px rgba(255,255,255,.08);
+
+    display:flex;
+    flex-direction:column;
+}
+
+.questTitle{
+
+    font-family:'Orbitron',sans-serif;
+
+    font-size:40px;
+
+    color:#ff7cc6;
+
+    letter-spacing:5px;
+
+    text-shadow:
+
+    0 0 10px hotpink,
+    0 0 20px deeppink;
+
+}
+
+#story{
+
+    flex:1;
+
+    margin-top:30px;
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+    padding-right:10px;
+
+    color:white;
+
+    font-size:28px;
+
+    line-height:1.8;
+
+}
+
+.pixelButton{
+
+    margin-top:25px;
+
+    padding:18px 50px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(90deg,#ff5ca8,#ff2f8c);
+
+    color:white;
+
+    font-size:22px;
+
+    font-family:'Fredoka',sans-serif;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.pixelButton:hover{
+
+    transform:translateY(-3px) scale(1.05);
+
+    box-shadow:0 0 25px hotpink;
+
+}
+
+@keyframes panelMasuk{
+
+    from{
+
+        opacity:0;
+        transform:translateY(30px) scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:none;
+
+    }
+
+}
+
+.dialog{
+
+    animation:fadeText .4s;
+
+}
+
+@keyframes fadeText{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:none;
+
+    }
+
+}
+
+.mysteryTitle{
+
+    color:white;
+
+    font-size:36px;
+
+    margin-bottom:10px;
+
+}
+
+.box{
+
+    width:120px;
+
+    height:120px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:65px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.12);
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    user-select:none;
+
+}
+
+.box:hover{
+
+    transform:translateY(-12px) scale(1.08);
+
+    box-shadow:0 0 25px hotpink;
+
+}
+
+.box.open{
+
+    animation:shake .4s;
+
+}
+
+@keyframes shake{
+
+0%{
+
+transform:rotate(0deg);
+
+}
+
+20%{
+
+transform:rotate(-8deg);
+
+}
+
+40%{
+
+transform:rotate(8deg);
+
+}
+
+60%{
+
+transform:rotate(-6deg);
+
+}
+
+80%{
+
+transform:rotate(6deg);
+
+}
+
+100%{
+
+transform:rotate(0deg);
+
+}
+
+}
+
+.photoQuestion{
+
+    margin-top:30px;
+
+}
+
+.photoQuestion img{
+
+    width:320px;
+
+    border-radius:20px;
+
+    filter:blur(12px);
+
+    transition:.8s;
+
+    box-shadow:0 0 30px rgba(255,105,180,.5);
+
+}
+
+.photoQuestion img.show{
+
+    filter:blur(0);
+
+}
+
+.answers{
+
+    margin-top:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.answer{
+
+    padding:15px;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.12);
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.answer:hover{
+
+    background:hotpink;
+
+    transform:scale(1.03);
+
+}
+
+.levelComplete{
+
+    animation:zoomIn .5s;
+
+    color:white;
+
+}
+
+.levelComplete h2{
+
+    font-size:45px;
+
+    color:#ffd54a;
+
+    text-shadow:
+    0 0 20px gold;
+
+}
+
+.levelComplete p{
+
+    font-size:26px;
+
+    color:#ff9ed1;
+
+}
+
+@keyframes zoomIn{
+
+from{
+
+opacity:0;
+
+transform:scale(.7);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+.photoGame{
+
+    animation:fadeText .5s;
+
+}
+
+.blurPhoto{
+
+    width:330px;
+
+    border-radius:20px;
+
+    margin-top:20px;
+
+    filter:blur(12px);
+
+    transition:.8s;
+
+    box-shadow:0 0 30px hotpink;
+
+}
+
+.blurPhoto.show{
+
+    filter:blur(0);
+
+    transform:scale(1.05);
+
+}
+
+.answers{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+    margin-top:30px;
+
+}
+
+.answerBtn{
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#ff5ca8;
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.answerBtn:hover{
+
+    transform:scale(1.03);
+
+    background:#ff2d91;
+
+}
+
+.successText{
+
+    margin-top:25px;
+
+    color:#ffe86a;
+
+    text-shadow:0 0 15px gold;
+
+    animation:fadeText .4s;
+
+}
+
+.letter{
+
+    text-align:left;
+
+    max-width:600px;
+
+    margin:auto;
+
+    color:white;
+
+    line-height:2;
+
+    font-size:21px;
+
+    animation:fadeText .8s;
+
+}
+
+.letter h2{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+    color:#ffd6ec;
+
+    text-shadow:0 0 15px hotpink;
+
+}
+
+.ending{
+
+    animation:fadeText 1s;
+
+}
+
+.ending h1{
+
+    font-size:50px;
+
+    color:white;
+
+    margin-bottom:20px;
+
+}
+
+.ending h2{
+
+    margin-top:40px;
+
+    color:#ffd6ec;
+
+    text-shadow:0 0 20px hotpink;
+
+}
+
+.letter{
+
+    max-width:620px;
+
+    margin:auto;
+
+    text-align:left;
+
+    color:white;
+
+    font-size:22px;
+
+    line-height:1.9;
+
+    white-space:pre-line;
+
+}
+
+#typewriter{
+
+    border-right:3px solid hotpink;
+
+    animation:kedip .8s infinite;
+
+}
+
+@keyframes kedip{
+
+    50%{
+
+        border-color:transparent;
+
+    }
+
+}
+
+.letter{
+
+    max-width:620px;
+
+    margin:auto;
+
+    text-align:left;
+
+    color:white;
+
+    font-size:22px;
+
+    line-height:1.9;
+
+    white-space:pre-line;
+
+}
+
+.letterTitle{
+
+    text-align:center;
+
+    font-size:32px;
+
+    margin-bottom:30px;
+
+    color:#ffd2ec;
+
+    text-shadow:
+    0 0 12px hotpink,
+    0 0 24px deeppink;
+
+}
+
+#typewriter{
+
+    border-right:3px solid white;
+
+    padding-right:4px;
+
+    animation:cursor .7s infinite;
+
+}
+
+@keyframes cursor{
+
+    50%{
+
+        border-color:transparent;
+
+    }
+
+}
+
+.showButton{
+
+    animation:buttonPop .45s;
+
+}
+
+@keyframes buttonPop{
+
+    0%{
+
+        transform:scale(.5);
+
+        opacity:0;
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+.panel::-webkit-scrollbar{
+    width:8px;
+}
+
+.panel::-webkit-scrollbar-track{
+    background:transparent;
+}
+
+.panel::-webkit-scrollbar-thumb{
+    background:#ff6eb8;
+    border-radius:20px;
+}
+
+.panel::-webkit-scrollbar-thumb:hover{
+    background:#ff3f9e;
+}
+
+#story::-webkit-scrollbar{
+
+    width:7px;
+
+}
+
+#story::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+#story::-webkit-scrollbar-thumb{
+
+    background:#ff6eb8;
+
+    border-radius:20px;
+
+}
+
+.pixelButton{
+
+    flex-shrink:0;
+
+}
+
+.letter{
+    padding-bottom:40px;
+}
+
+.letter::-webkit-scrollbar{
+    width:8px;
+}
+
+.letter::-webkit-scrollbar-track{
+    background:rgba(255,255,255,.1);
+    border-radius:20px;
+}
+
+.letter::-webkit-scrollbar-thumb{
+    background:#ff4fa0;
+    border-radius:20px;
+}
+
+#nextButton{
+    animation:pulse 1.8s infinite;
+}
+
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.04);
+box-shadow:0 0 30px hotpink;
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+.gallery{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
+
+    margin:30px auto;
+
+    max-width:700px;
+
+}
+
+.gallery img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:0 0 20px rgba(255,105,180,.5);
+
+}
+
+.gallery img:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:0 0 35px hotpink;
+
+}
+
+#photoModal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.85);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    z-index:99999;
+
+}
+
+#photoModal img{
+
+    max-width:80%;
+
+    max-height:80%;
+
+    border-radius:20px;
+
+    box-shadow:0 0 40px hotpink;
+
+}
+
+#photoModal span{
+
+    color:white;
+
+    font-size:45px;
+
+    cursor:pointer;
+
+    margin-bottom:25px;
+
+}
+
+.firework{
+
+    position:fixed;
+
+    font-size:40px;
+
+    pointer-events:none;
+
+    animation:boom 2s linear forwards;
+
+}
+
+@keyframes boom{
+
+0%{
+
+transform:scale(.2);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-250px) scale(2);
+
+opacity:0;
+
+}
+
+}
