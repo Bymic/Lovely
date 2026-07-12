@@ -113,7 +113,7 @@ function pilihBox(box, benar){
 
             <h2> YEYY BENERR </h2>
 
-            <p>Love you so much sayang</p>
+            <p>Masih ada satu lagi</p>
 
             `;
 
@@ -310,8 +310,8 @@ function tampilSurat(){
     nextButton.style.display = "none";
 
     const surat = `
-        Buat kamu
-        Sayang..
+        Buat Khalis Zahra Bilqis
+        Sayang...
         Selamat Ulang Tahun yaa sayangku. Semoga panjang umur, sehat selalu.
         Makasih udah bareng sama aku lagi setahun ini.
         Maafin aku klo aku suka ngeyel.
@@ -326,7 +326,7 @@ function tampilSurat(){
         <div class="letter">
 
             <div class="letterTitle">
-                💌 Surat Untuk Kamu 💌
+                💌 Surat Buat kamu 💖
             </div>
 
             <span id="typewriter"></span>
@@ -401,7 +401,7 @@ function bukaHadiah(){
 
     <div class="finalScene">
 
-        <h1>❤️ HAPPY BIRTHDAY ❤️</h1>
+        <h1>❤️ HAPPY BIRTHDAY</h1>
 
         <h2>SAYANGGGGGGG</h2>
 
